@@ -34,6 +34,30 @@ int main (void)
     return 0
 }
 
+/* Initialize the matrix */
+void init_matrix(void)
+{
+    int i, j;
+    for (i=0; i<3; i++)
+           for(j=0; j<3; j++)
+               matrix[i][j] = ' ';
+}
+
+
+/*Get player's move*/
+void get_player_move(void)
+{
+    int x, y;
+    printf("Enter X,Y coordinates for your move: ");
+    scanf("%d%*c%d", &x, &y);
+    x--; y--;
+    if (matrix[x][y]!=' ') {
+        printf("Invalid move");
+    get_player_move();
+    }
+else 
+    matrix[x][y]= 'X';
+}
 
 
 
